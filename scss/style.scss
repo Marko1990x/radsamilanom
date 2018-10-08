@@ -114,40 +114,40 @@ section{
 // kraj koda za dugmad koji floatuju u desno
 
 
-.slike{
-    background: $section_grey;
-    a {color: #f000;}
+.rooms {
+	background: $section_grey;
+	a { color: #000; }
 }
 
-.column{
-    width: 20%;
-    height: 20em;
-    float: left;
-    margin: 1em;
-    
+.column {
+	width: 20%;
+	height: 20em;
+	float: left;
+	margin: 1em;
 
-    .columninfo{
-        display: none;
-        width: 100%;
-        height: 40em;
-        background: rgba(255, 255, 255, 0.7);
-        padding: 1em;
-        
-        h1,h2 {font-weight: normal;}
+	.columninfo {
+		display: none;
+		width: 100%;
+		height: 40%;
+		background: rgba(255, 255, 255, 0.7);
+		padding: 1em;
 
-    }
+		h1, h2 { font-weight: normal; }
+	}
 
-    &:hover .columninfo {display: block};
+	&:hover .columninfo { display: block; }
 
-    @for $i from 1 through 6{
-        &.column#{$i} { 
+	@for $i from 1 through 6 {
+		&.column#{$i} { 
 			background: url('../slike/#{$i}.jpg'); 
 			background-size: cover;	
 		}
-    }
+	}
 }
 
 // ovo je deo koda za tabelu i pricing 
+
+// slike popravljene
 
 .contact, .pricing{
     h1{
@@ -205,6 +205,8 @@ section{
         }
 
     }
+
+    .pricingButton { display: none; }
 }
 
 // zavrsetak koda za tabelu.
@@ -314,6 +316,78 @@ footer{
         }
 
 	
+	}
+
+}
+
+@media screen and (max-width: 930px){
+
+    header{
+        .location{
+            width: 100%;
+        }
+
+        nav{
+            width: 100%;
+            height: auto;
+
+
+            ul{
+                li{
+                    width: 100%;
+                    text-align: center;
+                    padding: 1em;
+                }
+            }
+        }
+    }
+
+    .home{
+        background: black;
+
+        height: auto;
+
+        h1, h2{     // samo se uklanja background oko h1 h2 elementa i onda se nevidi boarder
+            background: none;
+        }
+
+
+    }
+
+    section{
+        padding: 3em 1em;
+    }
+
+    // column klasa za slike 
+
+
+    //podesavanje tabele za ractive , sklanjanje tabeke 
+ 
+	.pricing {
+
+		.ptable { display: none; }
+		.pricingButton { 
+			display: inline-block;
+    		margin-top: 2em; 
+		}
+
+	}
+
+	.contact {
+
+		.mapHolder {
+			width: 80%;
+		}
+
+		form {
+			margin: 1em 0;
+
+			.contactinput, .contactnput[type="text"] {
+				width: 96%;
+				float: none;
+			}
+		}
+
 	}
 
 }
